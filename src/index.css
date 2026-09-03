@@ -1,18 +1,17 @@
 @import "tailwindcss";
 
-/* Cor de marca central: troque só os valores abaixo pra rebrandear o app
-   inteiro sem precisar caçar "accent-XXX" pelo código. Hoje aponta pro
-   laranja padrão do Tailwind; antes apontava pro violet. */
 @theme {
-  --color-accent-50: var(--color-orange-50);
-  --color-accent-100: var(--color-orange-100);
-  --color-accent-200: var(--color-orange-200);
-  --color-accent-300: var(--color-orange-300);
-  --color-accent-400: var(--color-orange-400);
-  --color-accent-500: var(--color-orange-500);
-  --color-accent-600: var(--color-orange-600);
-  --color-accent-700: var(--color-orange-700);
-  --color-accent-800: var(--color-orange-800);
-  --color-accent-900: var(--color-orange-900);
-  --color-accent-950: var(--color-orange-950);
+  --color-primary: #ea580c;
+  --color-secondary: #27272a;
+  --color-accent-50: color-mix(in srgb, var(--color-primary), white 94%);
+  --color-accent-100: color-mix(in srgb, var(--color-primary), white 88%);
+  --color-accent-200: color-mix(in srgb, var(--color-primary), white 72%);
+  --color-accent-300: color-mix(in srgb, var(--color-primary), white 52%);
+  --color-accent-400: color-mix(in srgb, var(--color-primary), white 30%);
+  --color-accent-500: color-mix(in srgb, var(--color-primary), white 15%);
+  --color-accent-600: var(--color-primary);
+  --color-accent-700: color-mix(in srgb, var(--color-primary), black 15%);
+  --color-accent-800: color-mix(in srgb, var(--color-primary), black 30%);
+  --color-accent-900: color-mix(in srgb, var(--color-primary), black 45%);
+  --color-accent-950: color-mix(in srgb, var(--color-primary), black 60%);
 }

@@ -19,11 +19,12 @@ import { useOrderNotifications } from './hooks/useOrderNotifications'
 import { usePaymentRequestNotifications } from './hooks/usePaymentRequestNotifications'
 import { WaitlistPage } from './pages/tables/WaitlistPage'
 import { Toaster } from 'sonner'
+import type { TenantBranding } from './services/brandingService'
 
 const NAMESPACE = 'https://solution-kitchen.com'
 const DEV_FALLBACK_TENANT_ID = '00000000-0000-0000-0000-000000000001'
 
-function App() {
+function App({ branding }: { branding: TenantBranding }) {
   const { isLoading, isAuthenticated, loginWithRedirect, user, getAccessTokenSilently } = useAuth0()
 
   const roles: string[] = user?.[`${NAMESPACE}/roles`] ?? []
@@ -67,7 +68,7 @@ function App() {
     return (
       <div className="min-h-screen bg-zinc-50 flex flex-col items-center justify-center gap-6 px-8">
         <div className="text-center flex flex-col items-center">
-          <img src="/logo-lockup.svg" alt="Solution Kitchen" className="h-20 mb-4" />
+          <img src={branding.logoUrl} alt={branding.name} className="h-20 mb-4 max-w-[80vw] object-contain" />
           <p className="text-zinc-500 text-sm">Faça login para continuar</p>
         </div>
         <button
@@ -143,4 +144,4 @@ function App() {
     </BrowserRouter>
   )
 }
-export default App
+export default App
